@@ -15,7 +15,7 @@ class CreateRespuestasTable extends Migration
     {
         Schema::create('respuestas', function (Blueprint $table) {
             $table->id();
-            $table->integer('iddato');
+            $table->unsignedBigInteger('iddato');
             $table->integer('CO_1_P1');
             $table->integer('CO_1_P2');
             $table->integer('CO_1_P3');

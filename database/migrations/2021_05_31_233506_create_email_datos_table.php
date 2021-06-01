@@ -15,8 +15,8 @@ class CreateEmailDatosTable extends Migration
     {
         Schema::create('email_datos', function (Blueprint $table) {
             $table->id();
-            $table->integer('iddato');
-            $table->integer('idemail');
+            $table->unsignedBigInteger('iddato');
+            $table->unsignedBigInteger('idemail');
             $table->foreign('iddato')->references('id')->on('datos')->onDelete('cascade');
             $table->foreign('idemail')->references('id')->on('datos')->onDelete('cascade');
             $table->softDeletes();

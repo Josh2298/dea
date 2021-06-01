@@ -15,7 +15,7 @@ class CreateDatosTable extends Migration
     {
         Schema::create('datos', function (Blueprint $table) {
             $table->id();
-            $table->integer('iddo')->unsigned();
+            $table->unsignedBigInteger('iddo');
             $table->string('facultad');
             $table->string('carrera');
             $table->string('sigla', 30)->unique();
