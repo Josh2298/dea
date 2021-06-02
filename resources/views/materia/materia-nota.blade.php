@@ -76,8 +76,6 @@
                 <td>{{$nota->CUM_1_P1}}</td>
                 <td>{{$nota->CUM_2_P1}}</td>
                 <td>{{$nota->CUM_2_P2}}</td>
-                <td>
-                </td>
             </tr>
             @endforeach
         </tbody>

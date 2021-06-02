@@ -3,28 +3,54 @@
 namespace App\Http\Controllers;
 
 use App\Models\Dato;
-use App\Models\Email;
 use Illuminate\Http\Request;
-use GuzzleHttp;
 use Storage;
-use Illuminate\Support\Facades\Mail;
 
 class AuthController extends Controller
 {
+    public function authStudentView(){
+        if (session()->has('userStudent')) {
+            return redirect('get-cuestionario/');
+        } else {
+            return view('auth.login-student');
+        }
+    }
+
     public function authStudent(Request $request){
         $data = $request->all();
         $dato = Dato::where('sigla',$data['cuenta'])->where('codigo', $data['password'])->first();
         if (isset($dato)) {
-            return redirect('get-cuestionario/'.$dato['id']);
+            if (!session()->has($dato['sigla'])) {
+                $request->session()->put('userStudent', $dato['id']);
+                return redirect('get-cuestionario/' . $dato['id']);
+            } else {
+                $failed='Ya llenaste una encuesta para esta materia.';
+                return view('auth.login-student-form',compact('failed'));
+            }
         } else {
             $failed='Estas credenciales no coinciden con nuestros registros.';
             return view('auth.login-student-form',compact('failed'));
         }
     }
 
-    public function getCuestionario($id){
-        $dato = Dato::find($id);
-        return view('cuestionario.cuestionario', compact('dato'));
+    public function getCuestionario(){
+        if (session()->has('userStudent')) {
+            $dato = Dato::find(session()->get('userStudent'));
+            if (!session()->has($dato['sigla'])) {
+                return view('cuestionario.cuestionario', compact('dato'));
+            } else {
+                return redirect('cuestionario-llenado');
+            }
+        } else {
+            return redirect('login-student');
+        }
+    }
+
+    public function logoutStudent() {
+        if (session()->has('userStudent')) {
+            session()->pull('userStudent');
+        }
+        return redirect('login-student');
     }
 
     public function authCorreo(){

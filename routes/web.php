@@ -27,16 +27,18 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 
-Route::get('login-student', function() {
-    return view('auth.login-student');
-});
-
+Route::get('login-student', [AuthController::class, 'authStudentView']);
 Route::post('login-student-form', [AuthController::class, 'authStudent']);
+Route::get('logout-student', [AuthController::class, 'logoutStudent']);
+
+Route::get('get-cuestionario', [AuthController::class, 'getCuestionario']);
+Route::post('cuestionario-store',[RespuestaController::class,'storeCuestionario']);
+Route::get('cuestionario-llenado',[RespuestaController::class,'cuestionarioLlenado']);
+
+
 Route::get('login-correo', [AuthController::class, 'authCorreo']);
-Route::get('get-cuestionario/{id}', [AuthController::class, 'getCuestionario']);
 Route::post('send-correo', [AuthController::class, 'authCodigo']);
 
-Route::post('cuestionario-store',[RespuestaController::class,'storeCuestionario']);
 
 Route::group(['middleware'=>'auth'],function(){
     Route::resource('users',UserController::class);

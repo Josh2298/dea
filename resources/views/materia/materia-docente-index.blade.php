@@ -6,9 +6,9 @@
     Registrar Materia
 </a>
 
-<div class="row">
+<div class="table-responsive">
 
-    <table class="table table-hover table-bordered table-responsive">
+    <table class="table table-hover table-bordered">
         <thead class="thead-dark">
             <tr class="table-dark">
                 <th>Facultad</th>
@@ -29,17 +29,17 @@
                 <td>{{$materia->codigo}}</td>
                 <td>
                     <div class="btn-group">
-                        <a href="{{url('materias/'.$materia->id.'/nota')}}" class="btn btn-success">Notas</a>
-                        <a href="{{url('datos/'.$materia->id.'/edit')}}" class="btn btn-info">Editar</a>
-                        <form action="{{url('codigo')}}" method="POST" onclick="return confirm('¿Realmente desea modificar el codigo?');">
+                        <a href="{{url('materias/'.$materia->id.'/nota')}}" class="btn btn-sm btn-success">Notas</a>
+                        <a href="{{url('datos/'.$materia->id.'/edit')}}" class="btn btn-sm btn-info">Editar</a>
+                        <form class="d-inline btn-group" action="{{url('codigo')}}" method="POST" onclick="return confirm('¿Realmente desea modificar el codigo?');">
                             @csrf
                             <input type="hidden" name="id" value="{{$materia->id}}">
-                            <button type="submit" class="btn btn-secondary">Codigo</button>
+                            <button type="submit" class="btn btn-sm btn-secondary">Codigo</button>
                         </form>
-                        <form action="{{url('datos/'.$materia->id)}}" method="POST" onclick="return confirm('¿Realmente deseas borrar?');">
+                        <form class="d-inline btn-group" action="{{url('datos/'.$materia->id)}}" method="POST" onclick="return confirm('¿Realmente deseas borrar?');">
                             @csrf
                             <input type="hidden" name="_method" value="DELETE">
-                            <button type="submit" class="btn btn-danger">Eliminar</button>
+                            <button type="submit" class="btn btn-sm btn-danger">Eliminar</button>
                         </form>
                     </div>
                 </td>

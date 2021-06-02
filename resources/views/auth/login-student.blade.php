@@ -1,9 +1,9 @@
 @extends('layouts.app')
 @section('contenido')
 <div class="container">
-    <div class="row mt-5">
+    <div class="row">
         <div class="col-md-4 offset-md-4">
-            <div class="card">
+            <div class="card mt-5">
                 <div class="card-header text-center">
                     <h3>Iniciar Sesión</h3>
                 </div>
