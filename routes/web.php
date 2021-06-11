@@ -49,6 +49,7 @@ Route::group(['middleware'=>'auth'],function(){
     Route::get('materias/{id}/nota',[DatoController::class,'materiaNota']);
     Route::post('docentes-search',[DocenteController::class,'searchDocentes']);
     Route::post('codigo',[DatoController::class,'codigo']);
+    Route::get('notas/delete',[RespuestaController::class,'notaDelete']);
 });
 
 require __DIR__.'/auth.php';

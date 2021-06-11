@@ -1,9 +1,18 @@
 @extends('layouts.app')
 @section('contenido')
 
-    <a href="{{url('docentes/create')}}" class="btn btn-primary my-3">
-        Registrar Docente
-    </a>
+    <div class="row">
+        <div class="col-md-6">
+            <a href="{{url('docentes/create')}}" class="btn btn-primary my-3">
+                Registrar Docente
+            </a></div>
+        <div class="col-md-6 text-end">
+            <a href="{{url('notas/delete')}}" class="btn btn-danger my-3" onclick="return confirm('Esta a punto de borrar las respuestas de la encuesta¿Realmente desea borrar?');">
+                Eliminar notas
+            </a>
+        </div>
+    </div>
+
     <form action="{{ url('docentes-search') }}" method="POST">
         @csrf
         <div class="input-group mb-3">
@@ -31,13 +40,17 @@
                     <td>{{$docente->nombrecompleto}}</td>
                     <td class="text-end">
                         <div class="btn-group">
-                            <a href="{{url('docentes/'.$docente->id.'/edit')}}" class="btn btn-sm btn-info">Editar</a>
+                            <a href="{{url('docentes/'.$docente->id.'/edit')}}" class="btn btn-sm btn-info">
+                                <i class="fa fa-edit"></i>
+                            </a>
                             <a href="{{url('materias/'.$docente->id)}}" class="btn btn-sm btn-success">Materia</a>
                             <form class="btn-group" action="{{url('docentes/'.$docente->id)}}" method="POST"
                                   onclick="return confirm('¿Realmente deseas borrar?');">
                                 @csrf
                                 <input type="hidden" name="_method" value="DELETE">
-                                <button type="submit" class="btn btn-sm btn-danger">Eliminar</button>
+                                <button type="submit" class="btn btn-sm btn-danger">
+                                    <i class="fa fa-trash"></i>
+                                </button>
                             </form>
                         </div>
                     </td>

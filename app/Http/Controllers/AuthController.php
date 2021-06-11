@@ -22,14 +22,21 @@ class AuthController extends Controller
         if (isset($dato)) {
             if (!session()->has($dato['sigla'])) {
                 $request->session()->put('userStudent', $dato['id']);
-                return redirect('get-cuestionario/' . $dato['id']);
+                return redirect('get-cuestionario/');
             } else {
-                $failed='Ya llenaste una encuesta para esta materia.';
-                return view('auth.login-student-form',compact('failed'));
+                if(session()->get($dato['sigla'])===$dato['codigo']){
+                    $failed='Ya llenaste una encuesta para esta materia.';
+                    return view('auth.login-student',compact('failed'));
+                }
+                else {
+                    session()->pull($dato['sigla']);
+                    $request->session()->put('userStudent', $dato['id']);
+                    return redirect('get-cuestionario/');
+                }
             }
         } else {
             $failed='Estas credenciales no coinciden con nuestros registros.';
-            return view('auth.login-student-form',compact('failed'));
+            return view('auth.login-student',compact('failed'));
         }
     }
 

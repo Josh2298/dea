@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class Dato extends Model
 {
     use HasFactory;
-    use SoftDeletes;
+    //use SoftDeletes;
     protected $table='datos';
     protected $fillable=[
         'iddo',

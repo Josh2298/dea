@@ -37,6 +37,12 @@ class RespuestaController extends Controller
         }
     }
 
+    public function notaDelete()
+    {
+        Respuesta::get()->delete();
+        return redirect('docentes');
+    }
+
     protected function validar(Request $request)
     {
         $this->validate($request, [

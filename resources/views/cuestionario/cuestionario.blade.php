@@ -3,15 +3,29 @@
     <form class="form-horizontal" action="{{url('/cuestionario-store')}}" method="POST">
         @csrf
         <input type="hidden" name="iddato" value="{{$dato->id}}">
-        <h1>{{$dato->facultad}}</h1>
-        <h2>{{$dato->carrera}}</h2>
+        <legend class="text-center">UNIVERSIDAD TECNICA DE ORURO</legend>
+        <legend class="text-center">VICERRECTORADO</legend>
+        <hr style="height:15px;color:black;backgroun-color:black">
+        <h6 class="text-center">REGLAMENTO DE EVALUACION DOCENTE</h6>
+        <h6 class="text-center">Opinión Estudiantil</h6>
+        <h6 class="text-center">Opción N°2</h6>
+        <h6 class="text-center">Resolución H.C.U. N°58/93</h6>
+        <h6 class="text-center">De 27 de agosto de 1993</h6>
+        <hr style="height:15px;color:black;backgroun-color:black">
+
         <h3>{{$dato->sigla.' - '.$dato->asignatura}}</h3>
+        <h2>{{$dato->carrera}}</h2>
+        <h1>{{$dato->facultad}}</h1>
+        <hr style="height:15px;color:black;backgroun-color:black">
+
         <fieldset class="card">
             <div class="card-body">
                 <!-- Form Name -->
-                <legend>Encuesta</legend>
-                <b><h1>CONOCIMIENTOS DE LA ASIGNATURA</h1></b>
+                <hr style="height:15px;color:blue;backgroun-color:blue">
+                <b><h1 class="text-center">CONOCIMIENTOS DE LA ASIGNATURA</h1></b>
+                <hr style="height:15px;color:blue;backgroun-color:blue">
                 <b><h4>1. DEMOSTRACION DE CONOCIMIENTOS</h4></b>
+                <hr style="height:15px;color:blue;backgroun-color:blue">
 
                 <!-- Multiple Radios -->
                 <div class="form-group">
@@ -47,6 +61,7 @@
                     <div class="alert alert-danger">{{ $message }}</div>
                     @enderror
                 </div>
+                <br>
 
                 <!-- Multiple Radios -->
                 <div class="form-group">
@@ -82,6 +97,7 @@
                     <div class="alert alert-danger">{{ $message }}</div>
                     @enderror
                 </div>
+                <br>
 
                 <!-- Multiple Radios -->
                 <div class="form-group">
@@ -117,6 +133,7 @@
                     <div class="alert alert-danger">{{ $message }}</div>
                     @enderror
                 </div>
+                <br>
 
                 <!-- Multiple Radios -->
                 <div class="form-group">
@@ -152,6 +169,7 @@
                     <div class="alert alert-danger">{{ $message }}</div>
                     @enderror
                 </div>
+                <br>
 
                 <!-- Multiple Radios -->
                 <div class="form-group">
@@ -188,7 +206,9 @@
                     @enderror
                 </div>
 
+                <hr style="height:15px;color:blue;backgroun-color:blue">
                 <b><h4>2. USO DE CONOCIMIENTOS</h4></b>
+                <hr style="height:15px;color:blue;backgroun-color:blue">
                 <!-- Multiple Radios -->
                 <div class="form-group">
                     <label class="col-md-12 control-label" for="radios">En el desarrollo de la asignatura</label>
@@ -224,6 +244,7 @@
                     <div class="alert alert-danger">{{ $message }}</div>
                     @enderror
                 </div>
+                <br>
 
                 <!-- Multiple Radios -->
                 <div class="form-group">
@@ -259,6 +280,7 @@
                     <div class="alert alert-danger">{{ $message }}</div>
                     @enderror
                 </div>
+                <br>
 
                 <!-- Multiple Radios -->
                 <div class="form-group">
@@ -294,6 +316,7 @@
                     <div class="alert alert-danger">{{ $message }}</div>
                     @enderror
                 </div>
+                <br>
 
                 <!-- Multiple Radios -->
                 <div class="form-group">
@@ -328,6 +351,7 @@
                     <div class="alert alert-danger">{{ $message }}</div>
                     @enderror
                 </div>
+                <br>
 
                 <!-- Multiple Radios -->
                 <div class="form-group">
@@ -363,7 +387,9 @@
                     @enderror
                 </div>
 
+                <hr style="height:15px;color:blue;backgroun-color:blue">
                 <b><h4>3. ACTUALIZACION DE CONOCIMIENTOS</h4></b>
+                <hr style="height:15px;color:blue;backgroun-color:blue">
                 <!-- Multiple Radios -->
                 <div class="form-group">
                     <label class="col-md-12 control-label" for="radios">El docente, demuestra que utiliza información
@@ -398,6 +424,7 @@
                     <div class="alert alert-danger">{{ $message }}</div>
                     @enderror
                 </div>
+                <br>
 
                 <!-- Multiple Radios -->
                 <div class="form-group">
@@ -425,6 +452,7 @@
                     <div class="alert alert-danger">{{ $message }}</div>
                     @enderror
                 </div>
+                <br>
 
                 <!-- Multiple Radios -->
                 <div class="form-group">
@@ -453,8 +481,11 @@
                     @enderror
                 </div>
 
-                <b><h1>CUALIDADES PEDAGOGICAS</h1></b>
+                <hr style="height:15px;color:blue;backgroun-color:blue">
+                <b><h1 class="text-center">CUALIDADES PEDAGOGICAS</h1></b>
+                <hr style="height:15px;color:blue;backgroun-color:blue">
                 <b><h4>1. PLANIFICACION</h4></b>
+                <hr style="height:15px;color:blue;backgroun-color:blue">
                 <!-- Multiple Radios -->
                 <div class="form-group">
                     <label class="col-md-12 control-label" for="radios">El docente hace conocer los objetivos de la
@@ -489,6 +520,7 @@
                     <div class="alert alert-danger">{{ $message }}</div>
                     @enderror
                 </div>
+                <br>
 
                 <!-- Multiple Radios -->
                 <div class="form-group">
@@ -524,6 +556,7 @@
                     <div class="alert alert-danger">{{ $message }}</div>
                     @enderror
                 </div>
+                <br>
 
                 <!-- Multiple Radios -->
                 <div class="form-group">
@@ -560,7 +593,9 @@
                     @enderror
                 </div>
 
+                <hr style="height:15px;color:blue;backgroun-color:blue">
                 <b><h4>2. MOTIVACION</h4></b>
+                <hr style="height:15px;color:blue;backgroun-color:blue">
                 <!-- Multiple Radios -->
                 <div class="form-group">
                     <label class="col-md-12 control-label" for="radios">El docente presenta, el tema en forma
@@ -595,6 +630,7 @@
                     <div class="alert alert-danger">{{ $message }}</div>
                     @enderror
                 </div>
+                <br>
 
                 <!-- Multiple Radios -->
                 <div class="form-group">
@@ -630,6 +666,7 @@
                     <div class="alert alert-danger">{{ $message }}</div>
                     @enderror
                 </div>
+                <br>
 
                 <!-- Multiple Radios -->
                 <div class="form-group">
@@ -664,6 +701,7 @@
                     <div class="alert alert-danger">{{ $message }}</div>
                     @enderror
                 </div>
+                <br>
 
                 <!-- Multiple Radios -->
                 <div class="form-group">
@@ -692,7 +730,9 @@
                     @enderror
                 </div>
 
+                <hr style="height:15px;color:blue;backgroun-color:blue">
                 <b><h4>3. DIALOGO</h4></b>
+                <hr style="height:15px;color:blue;backgroun-color:blue">
                 <!-- Multiple Radios -->
                 <div class="form-group">
                     <label class="col-md-12 control-label" for="radios">En el desarrollo de la clase, el
@@ -729,6 +769,7 @@
                     <div class="alert alert-danger">{{ $message }}</div>
                     @enderror
                 </div>
+                <br>
 
                 <!-- Multiple Radios -->
                 <div class="form-group">
@@ -763,6 +804,7 @@
                     <div class="alert alert-danger">{{ $message }}</div>
                     @enderror
                 </div>
+                <br>
 
                 <!-- Multiple Radios -->
                 <div class="form-group">
@@ -797,6 +839,7 @@
                     <div class="alert alert-danger">{{ $message }}</div>
                     @enderror
                 </div>
+                <br>
 
                 <!-- Multiple Radios -->
                 <div class="form-group">
@@ -832,6 +875,7 @@
                     <div class="alert alert-danger">{{ $message }}</div>
                     @enderror
                 </div>
+                <br>
 
                 <!-- Multiple Radios -->
                 <div class="form-group">
@@ -868,7 +912,9 @@
                     @enderror
                 </div>
 
+                <hr style="height:15px;color:blue;backgroun-color:blue">
                 <b><h4>4. METODO</h4></b>
+                <hr style="height:15px;color:blue;backgroun-color:blue">
                 <!-- Multiple Radios -->
                 <div class="form-group">
                     <label class="col-md-12 control-label" for="radios">En su criterio, el docente, a lo largo de su
@@ -911,6 +957,7 @@
                     <div class="alert alert-danger">{{ $message }}</div>
                     @enderror
                 </div>
+                <br>
 
                 <!-- Multiple Radios -->
                 <div class="form-group">
@@ -945,6 +992,7 @@
                     <div class="alert alert-danger">{{ $message }}</div>
                     @enderror
                 </div>
+                <br>
 
                 <!-- Multiple Radios -->
                 <div class="form-group">
@@ -980,8 +1028,11 @@
                     @enderror
                 </div>
 
-                <b><h1>CUMPLIMIENTO</h1></b>
+                <hr style="height:15px;color:blue;backgroun-color:blue">
+                <b><h1 class="text-center">CUMPLIMIENTO</h1></b>
+                <hr style="height:15px;color:blue;backgroun-color:blue">
                 <b><h4>1. ASISTENCIA</h4></b>
+                <hr style="height:15px;color:blue;backgroun-color:blue">
                 <!-- Multiple Radios -->
                 <div class="form-group">
                     <label class="col-md-12 control-label" for="radios">El docente cumple con los horarios
@@ -1017,7 +1068,9 @@
                     @enderror
                 </div>
 
+                <hr style="height:15px;color:blue;backgroun-color:blue">
                 <b><h4>2. EXAMENES</h4></b>
+                <hr style="height:15px;color:blue;backgroun-color:blue">
                 <!-- Multiple Radios -->
                 <div class="form-group">
                     <label class="col-md-12 control-label" for="radios">El docente devuelve los examenes
@@ -1052,6 +1105,7 @@
                     <div class="alert alert-danger">{{ $message }}</div>
                     @enderror
                 </div>
+                <br>
 
                 <!-- Multiple Radios -->
                 <div class="form-group">
@@ -1087,6 +1141,7 @@
                     <div class="alert alert-danger">{{ $message }}</div>
                     @enderror
                 </div>
+                <br>
                 <div class="my-3">
                     <button class="btn btn-lg btn-primary">Enviar</button>
                 </div>
