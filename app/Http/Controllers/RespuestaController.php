@@ -30,7 +30,7 @@ class RespuestaController extends Controller
             if (session()->has($dato['sigla'])) {
                 return view('cuestionario.cuestionario-llenado');
             } else {
-                return redirect('get-cuestionario/'.$dato['id']);
+                return redirect('get-cuestionario/');
             }
         } else {
             return redirect('login-student');
